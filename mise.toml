@@ -1,0 +1,18 @@
+[tools]
+python = "3.13"
+uv = "latest"
+
+[tasks]
+install = { run = "uv sync", description = "Install dependencies" }
+serve = { run = "uv run python manage.py tailwind runserver", description = "Run development server with Tailwind" }
+celery-worker = { run = "uv run celery -A config worker -l info", description = "Run celery worker" }
+celery-beat = { run = "uv run celery -A config beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler", description = "Run celery beat" }
+flower = { run = "uv run celery -A config flower", description = "Run flower" }
+tailwind-watch = { run = "uv run python manage.py tailwind watch", description = "Watch Tailwind changes" }
+tailwind-build = { run = "uv run python manage.py tailwind build", description = "Build Tailwind CSS" }
+test = { run = "uv run pytest", description = "Run tests" }
+lint = { run = "uv run ruff check .", description = "Run linting" }
+format = { run = "uv run ruff format .", description = "Run formatter" }
+clean = { run = 'find . -type d -name "__pycache__" -exec rm -rf {} +', description = "Clean pycache" }
+docker-build = { run = "docker compose build", description = "Build docker images" }
+docker-up = { run = "docker compose up", description = "Start docker stack" }
