@@ -1,14 +1,17 @@
 # Content Security Policy
-CSP_REPORT_ONLY = True
+from csp.constants import NONE, SELF
 
-CSP_DEFAULT_SRC = ("'self'",)
-CSP_SCRIPT_SRC = (
-    "'self'",
-    "'unsafe-inline'", # For HTMX inline scripts if needed, though best to avoid
-    "https://unpkg.com", # For HTMX CDN (as used in base.html)
-)
-CSP_STYLE_SRC = (
-    "'self'",
-    "'unsafe-inline'", # Tailwind/DaisyUI often inserts inline styles
-)
-CSP_IMG_SRC = ("'self'", "data:")
+CONTENT_SECURITY_POLICY_REPORT_ONLY = {
+    "EXCLUDE_URL_PREFIXES": ["/excluded-path/"],
+    "DIRECTIVES": {
+        "default-src": [NONE],
+        "connect-src": [SELF],
+        "img-src": [SELF],
+        "form-action": [SELF],
+        "frame-ancestors": [SELF],
+        "script-src": [SELF],
+        "style-src": [SELF],
+        "upgrade-insecure-requests": True,
+        "report-uri": "/csp-report/",
+    },
+}
