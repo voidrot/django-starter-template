@@ -403,3 +403,4 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/linux,windows,macos,python,django,backup,archive,visualstudiocode
 
 **/.django_tailwind_cli
+.env.compose
