@@ -12,11 +12,7 @@
         {% tailwind_css %}
         <!-- HTMX -->
         {% django_htmx_script %}
-        {% block extra_head lets add style overrides for django-allauth so that allauth pages look clean and professional
-            and are easy to update
-            refer to django-allauth docs to determin the correct way to do this.
-            the docs are located at https://docs.allauth.org/en/latest/common/templates.html%}
-        {% endblock %}
+        {% block extra_head %}{% endblock %}
     </head>
     <body class="min-h-screen flex flex-col bg-base-100 text-base-content"
           hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>

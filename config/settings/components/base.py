@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'django_celery_beat',
     # "allauth.socialaccount.providers.google", # Example provider
     # Local
+    'apps.core',
     'apps.users',
+    'apps.pages',
 ]
 
 MIDDLEWARE = [

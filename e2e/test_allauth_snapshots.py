@@ -1,6 +1,7 @@
 import pytest
 from playwright.sync_api import Page, expect
 
+
 def test_login_page_aria_snapshot(page: Page, live_server):
     page.goto(f'{live_server.url}/accounts/login/')
     page.wait_for_selector('.card')
@@ -24,6 +25,7 @@ def test_login_page_aria_snapshot(page: Page, live_server):
           - button "Sign In"
     """)
 
+
 def test_signup_page_aria_snapshot(page: Page, live_server):
     page.goto(f'{live_server.url}/accounts/signup/')
     page.wait_for_selector('.card')
@@ -46,6 +48,7 @@ def test_signup_page_aria_snapshot(page: Page, live_server):
             - listitem: Cannot be entirely numeric
           - button "Sign Up"
     """)
+
 
 def test_password_reset_page_aria_snapshot(page: Page, live_server):
     page.goto(f'{live_server.url}/accounts/password/reset/')
