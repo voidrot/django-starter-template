@@ -1,5 +1,6 @@
 [tools]
-python = "3.13"
+pre-commit = "latest"
+python = "3.14"
 uv = "latest"
 
 [env]
