@@ -25,5 +25,5 @@ class UserAdmin(auth_admin.UserAdmin):
         ),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
     )
-    list_display = ['username', 'email', 'is_superuser']
-    search_fields = ['username', 'email']
+    list_display = ('username', 'email', 'is_superuser')  # type: ignore
+    search_fields = ('username', 'email')  # type: ignore[assignment]

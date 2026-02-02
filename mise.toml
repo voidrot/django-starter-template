@@ -19,7 +19,12 @@ tailwind-watch = { run = "uv run python manage.py tailwind watch", description =
 tailwind-build = { run = "uv run python manage.py tailwind build", description = "Build Tailwind CSS" }
 test = { run = "uv run pytest", env = { DJANGO_ENV = "testing" }, description = "Run tests" }
 test-e2e = { run = "uv run pytest e2e", env = { DJANGO_ENV = "testing" }, description = "Run E2E tests" }
-lint = { run = ["uv run ruff check .", "uv run djlint . --check"], description = "Run linting (Ruff + djlint)" }
+lint = { run = [
+  "uv run ruff check .",
+  "uv run djlint . --check",
+  "uv run pyrefly check --summarize-errors"
+], description = "Run linting (Ruff + djlint + pyrefly)" }
+lint-types = { run = ["uv run pyrefly check --summarize-errors"], description = "Run type linting (pyrefly)" }
 format = { run = ["uv run ruff format .", "uv run djlint . --reformat"], description = "Format code (Ruff + djlint)" }
 clean = { run = 'find . -type d -name "__pycache__" -exec rm -rf {} +', description = "Clean pycache" }
 docker-build = { run = "docker compose build", description = "Build docker images" }

@@ -31,6 +31,7 @@ dev = [
   "django-zeal>=2.0.4",
   "djlint>=1.36.4",
   "factory-boy>=3.3.3",
+  "pyrefly>=0.50.1",
   "pytest>=9.0.2",
   "pytest-django>=4.11.1",
   "pytest-playwright>=0.4.4",
@@ -49,3 +50,8 @@ exclude = ["migrations"]
 
 [tool.ruff.format]
 quote-style = "single"
+
+[tool.pyrefly]
+python_version = "3.13"
+project_includes = ["apps", "config"]
+project_excludes = ["apps/**/tests"]
