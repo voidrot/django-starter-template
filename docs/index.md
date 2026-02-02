@@ -14,7 +14,7 @@ This project provides a robust foundation for Django web applications, featuring
 ## Documentation Sections
 
 - **[Setup Guide](setup.md)**: Prerequisites, installation, and environment configuration.
-- **[Architecture](architecture/index.md)**: Deep dive into the project layout and technology stack.
+- **[Architecture](architecture.md)**: Deep dive into the project layout and technology stack.
   - **[Architecture Decisions](architecture/decisions)**: ADRs for architectural decisions.
 - **[Testing](testing.md)**: How to run unit and E2E tests, including Aria Snapshots.
 - **[Deployment](deployment.md)**: Production settings, Docker builds, and monitoring.
