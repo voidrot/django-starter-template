@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.13-slim-bookworm AS builder
+FROM python:3.14-slim-bookworm AS builder
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
@@ -19,7 +19,7 @@ COPY pyproject.toml uv.lock ./
 RUN uv sync --frozen --no-dev --no-install-project
 
 # Final stage
-FROM python:3.13-slim-bookworm
+FROM python:3.14-slim-bookworm
 
 WORKDIR /app
 
